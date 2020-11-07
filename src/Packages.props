@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <PackageReference Update="Newtonsoft.Json" Version="[12.0.3]" />
+    <PackageReference Update="System.Collections.Immutable" Version="[1.7.0]" />
+    <PackageReference Update="NConsole" Version="[3.12.6605.26941]" />
+    <PackageReference Update="Microsoft.Build.Locator" Version="[1.2.6]" />
+    <PackageReference Update="NuGet.Client" Version="[4.2.0]" />
+    <PackageReference Update="NuGet.Protocol.Core.v3" Version="[4.2.0]" />
+  </ItemGroup>
+  <ItemGroup Condition="'$(TargetFramework)' != 'netcoreapp2.1'">
+    <PackageReference Update="Microsoft.Build" Version="[16.4.0]" ExcludeAssets="runtime" />
+    <PackageReference Update="Microsoft.Build.Utilities.Core" Version="[16.4.0]" ExcludeAssets="runtime" />
+  </ItemGroup>
+  <ItemGroup Condition="'$(TargetFramework)' == 'netcoreapp2.1'">
+    <PackageReference Update="Microsoft.Build" Version="[15.9.20]" ExcludeAssets="runtime" />
+    <PackageReference Update="Microsoft.Build.Utilities.Core" Version="[16.4.0]" ExcludeAssets="runtime" />
+  </ItemGroup>
+</Project>
